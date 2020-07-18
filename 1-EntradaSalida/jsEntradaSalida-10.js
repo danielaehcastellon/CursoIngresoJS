@@ -1,3 +1,4 @@
+
 /*
 Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
@@ -14,3 +15,5 @@ function mostrarAumento()
 
 	document.getElementById("txtIdResultado").value = vDescuento;
 }
+
+
