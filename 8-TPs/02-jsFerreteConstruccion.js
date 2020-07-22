@@ -35,18 +35,18 @@ function Materiales ()
 {
 var vAncho;
 var vLargo;    
-var vPerimetro;
+var vArea;
 var vCemento;
 var vCal;
 
 vAncho = parseInt(document.getElementById("txtIdAncho").value);
 vLargo = parseInt(document.getElementById("txtIdLargo").value);
 
-vPerimetro = 2*(vAncho+vLargo);
+vArea = vAncho*vLargo;
 /* la mitad del perimetro en cemento*/
-vCemento = vPerimetro * 2;
+vCemento = vArea * 2;
 /* uno mas de la mitad en cal, no se me ocurrio otra forma */
-vCal = vPerimetro * 3;
+vCal = vArea * 3;
 
 alert("Materiales contrapiso "+vCemento+" bolsas de cemento y "+vCal+" de cal");
     
