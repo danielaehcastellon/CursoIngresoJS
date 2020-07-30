@@ -41,3 +41,23 @@ function mostrar()
 	}
 	
 }//FIN DE LA FUNCIÓN
+
+/* lo mismo con if, armar el esqueleto y despues rellenar
+if(vHora >=7 && vHora <=11)
+{
+	alert("Es de manana");
+} 
+else if(vHora >=12 && vHora <=19)
+{
+	alert("Es de tarde");
+}
+else if((vHora >=0 && vHora <=6) || (vHora >=20 && vHora<=24))
+{
+	alert("Es de noche");
+}
+else()
+{
+	alert("")
+}
+
+*/

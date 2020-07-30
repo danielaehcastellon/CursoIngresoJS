@@ -10,16 +10,68 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {//las lamp salen 35, el user pone la cantidad
-     let vLamparas;
+     let vCantidadlamparas;
+     let vPrecio = 35;
      let vMarcas;
      let vDescuento;
+     let vIIBB;
+     let vPrecioIIBB;
      let vResul; //podria asignarle aca el parsefloat asi ya me queda para dsp
 
-     vLamparas = parseInt(document.getElementById("txtIdCantidad").value);//cantidad
+     vCantidadlamparas = parseInt(document.getElementById("txtIdCantidad").value);//cantidad
      vMarcas = document.getElementById("Marca").value;
-     vDescuento = parseFloat(document.getElementById("txtIdprecioDescuento").value);
+     
+     if ( vCantidadlamparas >=6) //a
+     {
+         vDescuento = 0.50;
+         vResul = parseFloat((vPrecio * vCantidadlamparas) * 0.50); 
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+     else if ( vCantidadlamparas == 5 && vMarcas === "ArgentinaLuz") //b
+     { 
+         vDescuento = 0.40;
+         vResul = parseFloat((vPrecio * vCantidadlamparas) * 0.40);
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+     else 
+     {
+         vDescuento = 0.30;
+         vResul = parseFloat((vPrecio*vCantidadlamparas)* 0.30);
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
 
-     //A y no se porque puede ser por 6 o 7 o 8
+     if (vCantidadlamparas == 3 && vMarcas == "ArgentinaLuz") //d
+     {
+         vDescuento = 0.15;  
+         vResul = parseFloat((vPrecio * vCantidadlamparas) * 0.15);
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+     else if (vCantidadlamparas == 3 && vMarcas == "FelipeLamparas")
+     {
+         vDescuento = 0.10;
+         vResul = parseFloat((vPrecio*vCantidadlamparas)* 0.10);
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+     else (vCantidadlamparas == 3 && vMarcas != "ArgentinaLuz" && "FelipeLamparas") 
+     {
+         vDescuento = 0.05;
+         vResul = parseFloat((vPrecio*vCantidadlamparas)*0.05);
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+     if (vPrecio >120)
+     {
+         vPrecioIIBB = vPrecio * 1.10;
+         vIIBB = vPrecio * 0.1;
+         document.getElementById("txtIdprecioDescuento").value = vPrecioIIBB;
+         alert("IIBB Usted pago "+ vPrecioIIBB.toFixed(2) +" siendo "+ vIIBB.toFixed(2) +" el impuesto que se pago.");
+     }
+     else if (vCantidadlamparas <=2)
+     {
+         vResul = vCantidadlamparas * vPrecio;
+         document.getElementById("txtIdprecioDescuento").value = vResul;
+     }
+
+     /*
      if (vLamparas >=6 && vDescuento == (vLamparas * 50) / 100)
      {
          alert(parseFloat(vResul = vLamparas - vDescuento));}//B
@@ -35,7 +87,7 @@ function CalcularPrecio ()
          
          else (vMarcas != "ArgentinaLuz" && "FelipeLamparas")
          { alert(parseFloat(vResul = (35*4) * 20 /100));}
-         //D
+         //D */
 
 }
 //no se muestra por alert, se muestra en el cuadro de textos
