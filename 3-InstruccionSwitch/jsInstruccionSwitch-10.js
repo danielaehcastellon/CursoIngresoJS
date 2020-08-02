@@ -35,18 +35,9 @@ function mostrar()
 		break;
 
 		case "Otoño":
-			switch(vDestino)
-			{
-				case "Bariloche":
-				case "Cataratas":
-				case "Mar del plata": //podria poner eso por default?
-				case "Cordoba":
-					alert("Se viaja.");
-					break;
-
-			}
-		break;
-
+			alert("Se viaja.");
+			break;
+	
 		case "Primavera":
 			switch(vDestino)
 			{
