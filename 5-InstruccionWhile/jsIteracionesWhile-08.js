@@ -22,7 +22,7 @@ function mostrar()
 		}else if(num <=0){ //si no multi
 			multiplicacionNegativos = multiplicacionNegativos * num;
 
-		}
+		} //respuesta
 		respuesta=prompt("Desea sumar los positivos y multiplicar los negativos? Responder: si o no");
 
 	}//while(respuesta == "si");
